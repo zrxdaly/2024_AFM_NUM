@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+#SBATCH --partition=rome
+#SBATCH --time=05:00:00
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=Y.Dai-1@tudelft.nl
+
+# python Radial_binary2nc_b.py $SLURM_ARRAY_TASK_ID
+
+# python Radial_binary2nc_M.py $SLURM_ARRAY_TASK_ID
+
+# python HS_binary2npy_b.py $SLURM_ARRAY_TASK_ID
+
+# python HS_flux_npy.py $SLURM_ARRAY_TASK_ID
+
+python HS_phaseTflux.py $SLURM_ARRAY_TASK_ID
